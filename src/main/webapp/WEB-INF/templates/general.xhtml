@@ -13,11 +13,39 @@
 	<h:head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title><ui:insert name="title" /></title>
+		<link rel="stylesheet" type="text/css"
+			href="${request.contextPath}/resources/css/style.css" />
+		<link rel="shortcut icon"
+			href="${request.contextPath}/resources/css/images/favicon.png" />
 	</h:head>
 
 	<h:body>
-		<h1>Webflow and Facelets + </h1>
-		<ui:insert name="body" />
+	
+		<p:ajaxStatus onstart="statusDialog.show();" onsuccess="statusDialog.hide();" />
+		
+		<p:dialog modal="true" widgetVar="statusDialog" header="Processing..." draggable="true" closable="false">
+			<p:graphicImage value="$/css/images/ajaxloadingbar.gif" />
+		</p:dialog>
+		
+		<div id="container">
+			<div id="header">
+				<img src="#" id="logoText" alt="Интернет-магазин Рукоделие" />
+				<ui:insert name="header" />
+			</div>
+			<div id="line"/>
+			<div id="notes">
+				<ui:insert name="notes" />
+			</div>
+			<div id="content">
+				<ui:insert name="content" />
+			</div>
+			<div id="footer">
+				<hr></hr>
+				<p id="footerText">[ текст нижнего колонтитула ]</p>
+				<ui:insert name="footer" />
+			</div>
+		</div>
+
 	</h:body>
 
 </f:view>

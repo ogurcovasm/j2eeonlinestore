@@ -31,6 +31,7 @@
 		base-path="/WEB-INF/flows">
 		<webflow:flow-location-pattern
 			value="/**/*-flow.xml" />
+		<webflow:flow-location id="parent-flow" path="parent-flow.xml"/>
 	</webflow:flow-registry>
 
 	<faces:flow-builder-services

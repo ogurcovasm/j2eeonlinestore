@@ -1,51 +1,17 @@
-@charset "UTF-8";
-/* html tags*/
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    width: 850px;
-    text-align: center;
-    margin: 20px auto;
-}
-
-hr {
-    border: 0;
-    background-color: #333;
-    height: 1px;
-    margin: 0 25px;
-    width: 300px;
-}
-
 /*general styles*/
-#main { background: #eee }
+#container {
+	width: 95%;
+	height: 600px;
+	margin: auto;
+	padding: 20px 20px;
+	box-shadow: 2px 2px 10px #888;	
+	background: url(images/noise3.png);
+}
 
-/* styles for elements contained in the header*/
 #header {
-    height: 250px;
-    background: #aaa;
-}
-
-#logo {
-    height: 155px;
-    width: 155px;
-    float: left;
-    margin-left: 30px;
-    margin-top: -20px;
-}
-
-#logoText {
-    float: left;
-    margin: 20px 0 0 70px;
-    /* font styles apply to text within alt tags */
-    font-family: 'American Typewriter', Courier, monospace;
-    font-size: 50px;
-    color: #333;
-}
-
-#widgetBar {
-    height: 50px;
-    width: 850px;
-    float: right;
-    background: #ccc;
+	height: 200px;
+	background-color: #aaa;	
+	background: url(images/logo.png) 10px 10px no-repeat #272727;
 }
 
 .headerWidget {
@@ -57,30 +23,58 @@ hr {
     background: #aaa;
 }
 
-/* footer styles */
-#footer {
-    height: 60px;
-    width: 350px;
-    clear: left;
-    background: #aaa;
+#widgetBar {
+    height: 50px;
+    width: 850px;
+    float: right;
+    background: #ccc;
 }
 
-/* index page styles */
-#indexLeftColumn {
-    height: 400px;
+#logoText {
+    float: inherit;
+    margin: 20px 0 0 70px;
+    /* font styles apply to text within alt tags */
+    font-family: 'American Typewriter', Courier, monospace;
+    font-size: 30px;
+    color: #fff;
+}
+
+#line {
+	width: 100%;
+	height: 10px;
+	background: #ea5e0d;	
+}
+
+#notes {
+    height: 300px;
     width: 350px;
     float: left;
     background: #ccc;
 }
 
-#indexRightColumn {
+#space {
     height: 400px;
     width: 500px;
     float: left;
     background: #eee;
 }
 
-.categoryBox {
+#footer {
+    height: 100px;
+    width: 350px;
+    clear: left;
+    background: #aaa;
+}
+
+/*welcome styles*/
+#welcomeForm {
+    height: 300px;
+    width: 500px;
+    float: left;
+    background: #eee;
+}
+
+#categoryBox {
     height: 176px;
     width: 212px;
     margin: 21px 14px 6px;
@@ -88,9 +82,77 @@ hr {
     background: #ccc;
 }
 
+#items {
+	height: 100px;
+    width: 500px;
+    float: left;
+    background: #eee;
+}
+
 .categoryLabelText {
-    position: absolute;
     line-height: 150%;
-    font-size: x-large;
+    font-size: small;
     margin: 3px 10px;
 }
+
+.fieldset {
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 110px;
+	margin-bottom: 60px;
+	color: #5D5D5D;
+	background: url(images/gray_texture1.jpg);
+	border: 1px solid #A8A8A8;
+	box-shadow: 2px 2px 10px #888;
+	text-align: center;
+}
+
+.fieldset legend {
+	border: 1px solid #e0e0e0 !important;
+	background: #ea5e0d !important;
+	margin-top: -25px;
+	margin-bottom: -21px;
+	color: white !important;
+	box-shadow: 1px 1px 2px #000000;
+	text-shadow: 1px 1px 1px #333333 !important;
+	font-weight: normal !important; 
+	font-style : normal !important;
+}
+
+.tooltip {
+	font-size: 11px;
+	font-weight: normal; 
+	font-style : normal;
+	color: white;
+	background:	-moz-linear-gradient(center top , rgba(0, 0, 0, 0.25), transparent) repeat scroll 0% 0% rgb(170, 170, 170);
+	border: 1px solid gray;
+	padding: 6px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.8);
+	text-shadow: 1px 1px 1px #333333;
+}
+
+.ui-dialog-titlebar {
+	background-color: #ea5e0d !important;
+	color: white !important;
+	font-size: 12px !important;
+	text-shadow:1px 1px 1px #333333 !important;
+}
+
+.ui-widget-overlay {
+	background: none !important;
+}
+
+/*category styles*/
+#headerForm {
+	height: 200px;
+	background-color: #aaa;
+}
+
+#categoryForm {
+    margin-top: 10px;
+    width: 650px;
+    float: left;        
+}
+
+#productTable { width: 600px }
+
