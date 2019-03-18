@@ -12,16 +12,13 @@
 
 	<ui:define name="header">
 		<h:form id="headerForm">
-			<p:fieldset style="margin-bottom:20px">
-				<h:panelGrid columns="2" cellpadding="0">
-					<p:commandButton id="backToWelcome" action="backToWelcome"
-						immediate="true" icon="ui-icon-arrowreturnthick-1-w"
-						value="Главная" />
-					<p:commandButton id="forwardToCart" action="forwardToCart"
-						immediate="true" icon="ui-icon-cart"
-						value="Корзина" />
-				</h:panelGrid>
-			</p:fieldset>
+			<h:panelGrid columns="2" cellpadding="0">
+				<p:commandButton id="backToWelcome" action="backToWelcome"
+					immediate="true" icon="ui-icon-arrowreturnthick-1-w"
+					value="Главная" />
+				<p:commandButton id="forwardToCart" action="forwardToCart"
+					immediate="true" icon="ui-icon-cart" value="Корзина" />
+			</h:panelGrid>
 		</h:form>
 	</ui:define>
 
