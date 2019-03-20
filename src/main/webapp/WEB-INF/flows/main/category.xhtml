@@ -23,14 +23,49 @@
 	</ui:define>
 
 	<ui:define name="notes">
-		<p>[ ]</p>
+		<p class="selectedCategory">Вышивка бисером</p>
+		<p class="categoryText">Вышивка крестом</p>
+		<p class="categoryText">Алмазная мозаика</p>
+		<p class="categoryText">Вышивка лентами</p>
 	</ui:define>
 
 	<ui:define name="content">
 		<h:form id="categoryForm">
-			<h1>
-				<h:outputText value="[ Выбранная категория ]" />
-			</h1>
+			<h:dataTable id="items"
+                         captionClass="list-caption"
+                         columnClasses="list-column-center, list-column-left,
+                         list-column-right, list-column-center"
+                         footerClass="list-footer"
+                         headerClass="list-header"
+                         rowClasses="list-row-odd, list-row-even"
+                         styleClass="list-background"
+                         var="item">
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="product image"/>
+                    </f:facet>
+                </h:column> 
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="product description"/>
+                    </f:facet>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="price"/>
+                    </f:facet>
+                </h:column> 
+
+				<h:column>
+                    <f:facet name="header">
+                        <h:outputText value="purchase button"/>
+                    </f:facet>
+                </h:column>
+
+            </h:dataTable>
 		</h:form>
 	</ui:define>
 

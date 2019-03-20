@@ -14,10 +14,59 @@
 	<ui:define name="header"></ui:define>
 
 	<ui:define name="notes">
-		<p>[ корзина ]</p>
+		<h:form id="cartForm">
+			<p class="bubble hMargin">очистить корзину</p>
+			<h:commandLink action="continueShopping">
+				<h:outputText value="продолжить покупку" />
+			</h:commandLink>
+			<br></br>
+			<h:commandLink action="proceedToCheckout">
+				<h:outputText value="оформить заказ" />
+			</h:commandLink>
+		</h:form>
 	</ui:define>
 	
-	<ui:define name="content"></ui:define>
+	<ui:define name="content">
+		<p>Количество товаров в корзине: x</p>
+		<br></br>
+		<p>[ промежуточный итог: xxx ]</p>
+		<br></br>
+		
+		<h:dataTable id="items"
+                         captionClass="list-caption"
+                         columnClasses="list-column-center, list-column-left,
+                         list-column-right, list-column-center"
+                         footerClass="list-footer"
+                         headerClass="list-header"
+                         rowClasses="list-row-odd, list-row-even"
+                         styleClass="list-background"
+                         var="item">
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="product image"/>
+                    </f:facet>
+                </h:column> 
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="product description"/>
+                    </f:facet>
+                </h:column>
+                
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="price"/>
+                    </f:facet>
+                </h:column> 
+
+				<h:column>
+                    <f:facet name="header">
+                        <h:outputText value="quantity"/>
+                    </f:facet>
+                </h:column>
+          </h:dataTable>
+	</ui:define>
 	
 	<ui:define name="footer"></ui:define>
 

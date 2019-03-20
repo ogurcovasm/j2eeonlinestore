@@ -75,5 +75,29 @@
     float: left;        
 }
 
-#productTable { width: 600px }
+.selectedCategory {
+    line-height: 25px;
+    font-size: large
+}
 
+.categoryText {
+    line-height: 25px;
+    font-size: small;
+}
+
+/*cart styles*/
+.bubble {
+    font-weight: bold;
+    background-color: #f5eabe;
+    padding: 5px;
+    color: inherit;
+}
+
+.hMargin { margin: 0 30px }
+
+#cartForm {
+    height: 300px;
+    width: 350px;
+    float: left;
+    background: #ccc;
+}

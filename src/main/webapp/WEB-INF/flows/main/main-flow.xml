@@ -14,7 +14,12 @@
 	</view-state>
 	
 	<view-state id="cart" view="cart.xhtml">
-		
+		<transition on="continueShopping" to="category" />
+		<transition on="proceedToCheckout" to="checkout" />
+	</view-state>
+	
+	<view-state id="checkout" view="checkout.xhtml">
+	
 	</view-state>
 	
 </flow>
