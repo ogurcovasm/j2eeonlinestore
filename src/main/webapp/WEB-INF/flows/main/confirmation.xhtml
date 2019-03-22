@@ -14,31 +14,23 @@
 	<ui:define name="header">
 		<h:form id="headerForm">
 			<h:panelGrid columns="1" cellpadding="0">
-				<p:commandButton id="backToCart" action="backToCart"
-					immediate="true" icon="ui-icon-cart" value="Корзина" />
+				<p:commandButton id="backToWelcome" action="backToWelcome"
+					immediate="true" icon="ui-icon-arrowreturnthick-1-w"
+					value="Главная" />
 			</h:panelGrid>
 		</h:form>
 	</ui:define>
 
 	<ui:define name="notes">
-		<p>заказ</p>
-		<h:form id="checkoutForm">
-			<h:outputText
-				value="[ форма, содержащая поля для
-                                записи сведений о клиенте ]" />
-			<br></br>
-			<p:commandButton id="forwardToConfirmation"
-				action="forwardToConfirmation" immediate="true" icon="ui-icon-check"
-				value="Отправить" />
+		<p>[ порядковый номер заказа ]</p>
+		<h:form id="confirmationForm">
+			<h:outputText value="[ информация о клиенте ]" />
 		</h:form>
 	</ui:define>
 
 	<ui:define name="content">
-		<p>[ стоимость доставки ]</p>
-		<h:form id="checkoutContentForm">
-			<h:outputText value="[ расчеты покупки:" />
-			<br />
-			<h:outputText value="промежуточная сумма + оплата за доставку ]" />
+		<h:form id="confirmationContentForm">
+			<h:outputText value="[ сводная таблица заказа ]" />
 		</h:form>
 	</ui:define>
 
