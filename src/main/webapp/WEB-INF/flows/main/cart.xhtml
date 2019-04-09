@@ -25,49 +25,48 @@
 			</h:commandLink>
 		</h:form>
 	</ui:define>
-	
-	<ui:define name="content">
-		<p>Количество товаров в корзине: x</p>
-		<br></br>
-		<p>[ промежуточный итог: xxx ]</p>
-		<br></br>
-		
-		<h:dataTable id="items"
-                         captionClass="list-caption"
-                         columnClasses="list-column-center, list-column-left,
-                         list-column-right, list-column-center"
-                         footerClass="list-footer"
-                         headerClass="list-header"
-                         rowClasses="list-row-odd, list-row-even"
-                         styleClass="list-background"
-                         var="item">
 
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="product image"/>
-                    </f:facet>
-                </h:column> 
-                
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="product description"/>
-                    </f:facet>
-                </h:column>
-                
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="price"/>
-                    </f:facet>
-                </h:column> 
+	<ui:define name="content">
+		<h:form id="cartContentForm">
+			<p>Количество товаров в корзине: x</p>
+			<br></br>
+			<p>[ промежуточный итог: xxx ]</p>
+			<br></br>
+
+			<h:dataTable id="items" captionClass="list-caption"
+				columnClasses="list-column-center, list-column-left,
+                         list-column-right, list-column-center"
+				footerClass="list-footer" headerClass="list-header"
+				rowClasses="list-row-odd, list-row-even"
+				styleClass="list-background" var="item">
 
 				<h:column>
-                    <f:facet name="header">
-                        <h:outputText value="quantity"/>
-                    </f:facet>
-                </h:column>
-          </h:dataTable>
+					<f:facet name="header">
+						<h:outputText value="product image" />
+					</f:facet>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="product description" />
+					</f:facet>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="price" />
+					</f:facet>
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="quantity" />
+					</f:facet>
+				</h:column>
+			</h:dataTable>
+		</h:form>
 	</ui:define>
-	
+
 	<ui:define name="footer"></ui:define>
 
 </ui:composition>

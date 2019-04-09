@@ -20,22 +20,86 @@
 		</h:form>
 	</ui:define>
 
-	<ui:define name="notes">
-		<p>заказ</p>
+	<ui:define name="content">
 		<h:form id="checkoutForm">
-			<h:outputText
-				value="[ форма, содержащая поля для
-                                записи сведений о клиенте ]" />
-			<br></br>
-			<p:commandButton id="forwardToConfirmation"
-				action="forwardToConfirmation" immediate="true" icon="ui-icon-check"
-				value="Отправить" />
+			<p:fieldset styleClass="fieldset" legend="Форма оформления заказа">
+				<p:messages id="messages" />
+				
+				<h:panelGrid id="checkoutPanelGrid"
+					style="margin: 0 auto; margin-top: 25px; text-align: right"
+					cellspacing="10" columns="3">
+
+					<h:panelGroup>
+						<h:outputText value="Фамилия Имя Отчество:" styleClass="checkoutText" />
+						<h:outputText style="color:red" value="*  " />
+					</h:panelGroup>
+
+					<p:inputText id="name" label="Customer Name"
+						value="#{customer.name}" required="true"
+						title="Введите ваше ФИО">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					
+					<br></br>
+					<h:panelGroup>
+						<h:outputText value="Адрес:" styleClass="checkoutText" />
+						<h:outputText style="color:red" value="*  " />
+					</h:panelGroup>
+
+					<p:inputText id="address" label="Customer Address"
+						value="#{customer.address}" required="true"
+						title="Введите адрес доставки">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					
+					<br></br>
+					<h:panelGroup>
+						<h:outputText value="Телефон:" styleClass="checkoutText" />
+						<h:outputText style="color:red" value="*  " />
+					</h:panelGroup>
+
+					<p:inputText id="phone" label="Customer Phone"
+						value="#{customer.phone}" required="true"
+						title="Введите телефон">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					
+					<br></br>
+					<h:panelGroup>
+						<h:outputText value="Адрес почты:" styleClass="checkoutText" />
+						<h:outputText style="color:red" value="*  " />
+					</h:panelGroup>
+
+					<p:inputText id="email" label="Customer Email"
+						value="#{customer.email}" required="true"
+						title="Введите адрес электронной почты">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					
+					<br></br>
+					<h:panelGroup>
+						<h:outputText value="Номер карты:" styleClass="checkoutText" />
+						<h:outputText style="color:red" value="*  " />
+					</h:panelGroup>
+
+					<p:inputText id="cc_number" label="Customer Cart"
+						value="#{customer.cc_Number}" required="true"
+						title="Введите номер карты">
+						<f:validateLength minimum="2" />
+					</p:inputText>
+					
+					<br></br>
+					<p:commandButton id="forwardToConfirmation"
+						action="forwardToConfirmation" update="checkoutPanelGrid,messages"
+						icon="ui-icon-check" value="Отправить" />
+				</h:panelGrid>
+			</p:fieldset>
 		</h:form>
 	</ui:define>
 
-	<ui:define name="content">
-		<p>[ стоимость доставки ]</p>
+	<ui:define name="notes">
 		<h:form id="checkoutContentForm">
+			<p>[ стоимость доставки ]</p>
 			<h:outputText value="[ расчеты покупки:" />
 			<br />
 			<h:outputText value="промежуточная сумма + оплата за доставку ]" />

@@ -102,20 +102,30 @@
     background: #ccc;
 }
 
+#cartContentForm {
+	margin-top: 10px;
+    width: 650px;
+    float: left;   
+}
+
 /*checkout styles*/
 #checkoutForm {
-	height: 220px;
-    width: 350px;
+	height: 300px;
+    width: 600px;
     float: left;
     background: #f5eabe;
 }
 
 #checkoutContentForm {
-	height: 240px;
+	height: 220px;
 	width: 350px;
     padding-left: 30px;
     float: left;
     background: #B0C4DE;
+}
+
+.checkoutText {
+	font-size: 14px;
 }
 
 /*confirmation styles*/
