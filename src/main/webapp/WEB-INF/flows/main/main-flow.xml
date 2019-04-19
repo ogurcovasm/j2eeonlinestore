@@ -7,7 +7,9 @@
 	<var name="customer" class="com.example.j2eeonline.domain.CustomerEntity" />
 
 	<view-state id="welcome" view="welcome.xhtml">
-		<transition on="newCategory" to="category" /> <!-- action id -->
+		<transition on="newCategory" to="category">
+			<evaluate expression="productService.findAll()" result="flowScope.products" />
+		</transition>
 	</view-state>
 
 	<view-state id="category" view="category.xhtml">

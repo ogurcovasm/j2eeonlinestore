@@ -10,9 +10,17 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- DAO declarations -->
 	<bean id="customerDao"
 		class="com.example.j2eeonline.dao.CustomerJpaDao" />
+	
+	<bean id="productDao"
+		class="com.example.j2eeonline.dao.ProductJpaDao" />
 
 	<!-- Services declarations-->
 	<bean id="customerService" class="com.example.j2eeonline.services.impl.CustomerServiceImpl">
 		<property name="customerDao" ref="customerDao" />
 	</bean>
+	
+	<bean id="productService" class="com.example.j2eeonline.services.impl.ProductServiceImpl">
+		<property name="productDao" ref="productDao" />
+	</bean>
+	
 </beans>

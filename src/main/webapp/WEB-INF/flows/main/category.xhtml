@@ -31,14 +31,23 @@
 
 	<ui:define name="content">
 		<h:form id="categoryForm">
-			<p:dataTable id="products" var="p" paginator="true" dynamic="true"
-				lazy="true">
+			<p:dataTable id="products" var="p" value="#{products}"
+				paginator="true" rows="2" dynamic="true" lazy="true">
 				<f:facet name="header">
 		        	Результаты поиска товаров<br />
 				</f:facet>
-				<p:column headerText="Наименование">
-					<h:outputText value="Наименование продукта" />
-				</p:column>				
+				<p:column>
+					<f:facet name="header">Наименование продукта</f:facet>
+					#{p.name}
+				</p:column>
+				<p:column>
+					<f:facet name="header">Цена</f:facet>
+					#{p.price}
+				</p:column>
+				<p:column>
+					<f:facet name="header">Описание</f:facet>
+					#{p.description}
+				</p:column>
 			</p:dataTable>
 		</h:form>
 	</ui:define>

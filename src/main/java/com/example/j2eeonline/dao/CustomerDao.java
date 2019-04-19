@@ -16,7 +16,7 @@ public interface CustomerDao extends GenericDao<CustomerEntity, Integer> {
 	 * Queries database for customer name availability
 	 * 
 	 * @param name
-	 * @return
+	 * @return true if available
 	 */
 	boolean checkAvailable(String name);
 	
@@ -24,7 +24,7 @@ public interface CustomerDao extends GenericDao<CustomerEntity, Integer> {
 	 * Queries customer by customer name
 	 * 
 	 * @param name
-	 * @return
+	 * @return Customer entity
 	 */
 	CustomerEntity loadByCustomerName(String name); 
 

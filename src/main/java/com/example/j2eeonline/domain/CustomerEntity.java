@@ -6,7 +6,7 @@ import javax.persistence.Table;
 import com.example.j2eeonline.commons.domain.BaseEntity;
 
 /**
- * Entity to hold product data - cc_number, address, etc.
+ * Entity to hold customer data - cc_number, address, etc.
  * 
  * @author Svetlana Ogurcova
  *
