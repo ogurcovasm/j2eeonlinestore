@@ -10,6 +10,18 @@
 		<transition on="newCategory" to="category">
 			<evaluate expression="productService.findAll()" result="flowScope.products" />
 		</transition>
+		<transition on="categoryBeadWork" to="category">
+			<evaluate expression="productService.filterByCategoryId(1)" result="flowScope.products" />
+		</transition>
+		<transition on="categoryCrossStitch" to="category">
+			<evaluate expression="productService.filterByCategoryId(2)" result="flowScope.products"/>
+		</transition>
+		<transition on="categoryDiamondMosaic" to="category">
+			<evaluate expression="productService.filterByCategoryId(3)" result="flowScope.products"/>
+		</transition>
+		<transition on="categoryEmbroideryRibbons" to="category">
+			<evaluate expression="productService.filterByCategoryId(4)" result="flowScope.products"/>
+		</transition>
 	</view-state>
 
 	<view-state id="category" view="category.xhtml">

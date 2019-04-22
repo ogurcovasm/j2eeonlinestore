@@ -22,21 +22,21 @@
 		</h:form>
 	</ui:define>
 
-	<ui:define name="notes">
-		<p class="selectedCategory">Вышивка бисером</p>
-		<p class="categoryText">Вышивка крестом</p>
-		<p class="categoryText">Алмазная мозаика</p>
-		<p class="categoryText">Вышивка лентами</p>
-	</ui:define>
+	<ui:define name="notes" />
 
 	<ui:define name="content">
 		<h:form id="categoryForm">
 			<p:dataTable id="products" var="p" value="#{products}"
-				paginator="true" rows="2" dynamic="true" lazy="true">
+				paginator="true" rows="2" lazy="true">
 				<f:facet name="header">
 		        	Результаты поиска товаров<br />
 				</f:facet>
 				<p:column>
+					<f:facet name="header">Изображение</f:facet>
+					<img
+						src="${request.contextPath}/resources/css/images/products/#{p.name}.jpg" />
+				</p:column>
+				<p:column filterBy="#{p.name}" filterMatchMode="contains">
 					<f:facet name="header">Наименование продукта</f:facet>
 					#{p.name}
 				</p:column>
@@ -44,7 +44,7 @@
 					<f:facet name="header">Цена</f:facet>
 					#{p.price}
 				</p:column>
-				<p:column>
+				<p:column filterBy="#{p.description}" filterMatchMode="contains">
 					<f:facet name="header">Описание</f:facet>
 					#{p.description}
 				</p:column>

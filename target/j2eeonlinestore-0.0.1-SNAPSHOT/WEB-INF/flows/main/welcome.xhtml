@@ -1,72 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml"
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:p="http://primefaces.org/ui"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:sql="http://java.sun.com/jsp/jstl/sql"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	template="/WEB-INF/templates/general.xhtml">
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel="stylesheet" type="text/css"
-	href="${request.contextPath}/resources/css/style.css" />
-<title>Интернет-магазин Рукоделие</title>
-</head>
-<body>
-	<div id="main">
-		<div id="header">
-			<div id="widgetBar">
+	<ui:define name="title">
+		<h:outputText value="Интернет-магазин Рукоделие" />
+	</ui:define>
 
-				<div class="headerWidget">[ shopping cart widget ]</div>
+	<ui:define name="header"></ui:define>
 
-			</div>
+	<ui:define name="notes">
+		<p class="selectedCategory">Добро пожаловать! Здесь размещены картины для рукоделия. С ними
+				интерьер станет ярким и творческим.</p>
+	</ui:define>
 
-			<a href="#"> <img src="#" id="logo"
-				alt="Логотип интернет-магазина" />
-			</a> <img src="#" id="logoText" alt="Интернет-магазин Рукоделие" />
+	<ui:define name="content">
+		<p:panel heard="Поиск товаров" toggleable="true" toggleSpeed="100">
+			<h:form id="welcomeForm">
+				<p:messages globalOnly="true" />
+				<h:panelGrid columns="2">
+					<p:commandButton id="findProducts" value="Найти товары"
+						action="newCategory" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/Collage.jpg" />
+					</div>
+					<p:commandButton id="findBeadWork"
+						value="Товары из категории Вышивка бисером"
+						action="categoryBeadWork" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/BeadWork.jpg" />
+					</div>
+					<p:commandButton id="findCrossStitch"
+						value="Товары из категории Вышивка крестом"
+						action="categoryCrossStitch" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/CrossStitch.jpg" />
+					</div>
+					<p:commandButton id="findDiamondMosaic"
+						value="Товары из категории Алмазная мозаика"
+						action="categoryDiamondMosaic" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/DiamondMosaic.jpg" />
+					</div>
+					<p:commandButton id="findEmbroideryRibbons"
+						value="Товары из категории Вышивка лентами"
+						action="categoryEmbroideryRibbons" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/EmbroideryRibbons.jpg" />
+					</div>
+				</h:panelGrid>
+			</h:form>
+		</p:panel>
+	</ui:define>
 
-		</div>
+	<ui:define name="footer"></ui:define>
 
-		<div id="indexLeftColumn">
-			<div id="welcomeText">
-				<p>[ welcome text ]</p>
-			</div>
-		</div>
-
-		<div id="indexRightColumn">
-
-			<div class="categoryBox">
-				<a href="#"> <span class="categoryLabelText">Вышивка
-						бисером</span>
-				</a>
-			</div>
-
-			<div class="categoryBox">
-				<a href="#"> <span class="categoryLabelText">Вышивка
-						крестом</span>
-				</a>
-			</div>
-
-			<div class="categoryBox">
-				<a href="#"> <span class="categoryLabelText">Алмазная
-						мозаика</span>
-				</a>
-			</div>
-
-			<div class="categoryBox">
-				<a href="#"> <span class="categoryLabelText">Вышивка
-						лентами</span>
-				</a>
-			</div>
-
-		</div>
-
-		<div id="footer">
-			<hr></hr>
-			<p id="footerText">[ footer text ]</p>
-		</div>
-	</div>
-</body>
-</html>
+</ui:composition>

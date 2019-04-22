@@ -7,7 +7,7 @@ ALTER TABLE category ADD CONSTRAINT category_pk PRIMARY KEY ( id );
 
 CREATE TABLE customer (
     id            INTEGER NOT NULL,
-    name          VARCHAR2(45),
+    name          VARCHAR2(100),
     email         VARCHAR2(45),
     phone         VARCHAR2(45),
     address       VARCHAR2(100),

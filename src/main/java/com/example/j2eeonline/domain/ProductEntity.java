@@ -22,6 +22,7 @@ public class ProductEntity extends BaseEntity {
 	private String name;	
 	private BigDecimal price;	
 	private String description;	
+	private Integer category_id; 
 
 	public String getName() {
 		return name;
@@ -48,6 +49,14 @@ public class ProductEntity extends BaseEntity {
 		this.description = description;
 	}
 	
+	public Integer getCategory_id() {
+		return category_id;
+	}
+
+	public void setCategory_id(Integer category_id) {
+		this.category_id = category_id;
+	}
+
 	public String toString() {
 		return "Product(" + name + "," + price + "," + description + ")";
 		

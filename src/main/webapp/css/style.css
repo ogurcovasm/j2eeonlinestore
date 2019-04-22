@@ -1,7 +1,7 @@
 /*general styles*/
 #container {
 	width: 95%;
-	height: 600px;
+	min-height: 600px;
 	margin: auto;
 	padding: 20px 20px;
 	box-shadow: 2px 2px 10px #888;	
@@ -30,7 +30,7 @@
 }
 
 #notes {
-    height: 300px;
+    min-height: 600px;
     width: 350px;
     float: left;
     background: #ccc;
@@ -45,7 +45,7 @@
 
 /*welcome styles*/
 #welcomeForm {
-    height: 300px;
+    min-height: 600px;
     width: 500px;
     float: left;
     background: #eee;
@@ -77,7 +77,7 @@
 
 .selectedCategory {
     line-height: 25px;
-    font-size: large
+    font-size: x-large;
 }
 
 .categoryText {

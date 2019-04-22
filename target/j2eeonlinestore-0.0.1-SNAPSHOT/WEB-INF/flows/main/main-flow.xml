@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/webflow
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+	<var name="customer" class="com.example.j2eeonline.domain.CustomerEntity" />
+
+	<view-state id="welcome" view="welcome.xhtml">
+		<transition on="newCategory" to="category">
+			<evaluate expression="productService.findAll()" result="flowScope.products" />
+		</transition>
+		<transition on="categoryBeadWork" to="category">
+			<evaluate expression="productService.filterByCategoryId(1)" result="flowScope.products" />
+		</transition>
+		<transition on="categoryCrossStitch" to="category">
+			<evaluate expression="productService.filterByCategoryId(2)" result="flowScope.products"/>
+		</transition>
+		<transition on="categoryDiamondMosaic" to="category">
+			<evaluate expression="productService.filterByCategoryId(3)" result="flowScope.products"/>
+		</transition>
+		<transition on="categoryEmbroideryRibbons" to="category">
+			<evaluate expression="productService.filterByCategoryId(4)" result="flowScope.products"/>
+		</transition>
+	</view-state>
+
+	<view-state id="category" view="category.xhtml">
+		<transition on="backToWelcome" to="welcome" />
+		<transition on="forwardToCart" to="cart" />
+	</view-state>
+
+	<view-state id="cart" view="cart.xhtml">
+		<transition on="continueShopping" to="category" />
+		<transition on="proceedToCheckout" to="checkout" />
+	</view-state>
+
+	<view-state id="checkout" view="checkout.xhtml" model="customer">
+		<transition on="forwardToConfirmation" to="confirmation" >
+			<evaluate expression="customerService.createCustomer(customer)" />
+		</transition>
+		<transition on="backToCart" to="cart" />
+	</view-state>
+
+	<view-state id="confirmation" view="confirmation.xhtml">
+		<transition on="backToWelcome" to="welcome" />
+	</view-state>
+
+</flow>

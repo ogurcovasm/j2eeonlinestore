@@ -17,5 +17,6 @@ public interface GenericDao<T, ID extends Serializable> {
 	void delete(T entity);
 	T findById(ID id);
 	List<T> findAll();
+	List<T> filterByCategoryId(Integer categoryId);
 	void flush();	
 }

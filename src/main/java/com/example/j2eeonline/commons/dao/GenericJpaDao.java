@@ -55,6 +55,16 @@ private Class<T> persistentClass;
 			.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly=true)
+	public List<T> filterByCategoryId(Integer categoryId) {
+		return getEntityManager()
+				.createQuery("select x from " + getPersistentClass().getSimpleName() + " x"
+						+ " where x.category_id like :categoryId")
+				.setParameter("categoryId", categoryId)
+				.getResultList();
+	}
+	
 	public T save(T entity) {
 		getEntityManager().persist(entity);
 		return entity;

@@ -22,5 +22,7 @@ public interface ProductService {
 	 * @return a list of products meeting the criteria
 	 */
 	public List<ProductEntity> findAll();
+	
+	public List<ProductEntity> filterByCategoryId(Integer categoryId);
 
 }

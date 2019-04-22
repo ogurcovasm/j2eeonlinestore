@@ -14,4 +14,6 @@ import com.example.j2eeonline.domain.ProductEntity;
 public interface ProductDao extends GenericDao<ProductEntity, Integer>{
 
 	public List<ProductEntity> findAll();
+	
+	public List<ProductEntity> filterByCategoryId(Integer categoryId);
 }

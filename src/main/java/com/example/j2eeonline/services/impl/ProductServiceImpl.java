@@ -10,11 +10,18 @@ public class ProductServiceImpl implements ProductService {
 	
 	private List<ProductEntity> products;
 	
+	private List<ProductEntity> filteredProducts;
+	
 	private ProductDao productDao;
 		
 	public List<ProductEntity> findAll() {
 		this.products = productDao.findAll();
 		return products;
+	}
+	
+	public List<ProductEntity> filterByCategoryId(Integer categoryId) {
+		this.filteredProducts = productDao.filterByCategoryId(categoryId);
+		return filteredProducts;
 	}
 
 	public ProductDao getProductDao() {
@@ -24,5 +31,4 @@ public class ProductServiceImpl implements ProductService {
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}
-
 }

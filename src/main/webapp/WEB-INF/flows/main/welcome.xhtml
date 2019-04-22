@@ -16,7 +16,8 @@
 	<ui:define name="header"></ui:define>
 
 	<ui:define name="notes">
-		<p>[ текст приветствия ]</p>
+		<p class="selectedCategory">Добро пожаловать! Здесь размещены картины для рукоделия. С ними
+				интерьер станет ярким и творческим.</p>
 	</ui:define>
 
 	<ui:define name="content">
@@ -26,6 +27,38 @@
 				<h:panelGrid columns="2">
 					<p:commandButton id="findProducts" value="Найти товары"
 						action="newCategory" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/Collage.jpg" />
+					</div>
+					<p:commandButton id="findBeadWork"
+						value="Товары из категории Вышивка бисером"
+						action="categoryBeadWork" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/BeadWork.jpg" />
+					</div>
+					<p:commandButton id="findCrossStitch"
+						value="Товары из категории Вышивка крестом"
+						action="categoryCrossStitch" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/CrossStitch.jpg" />
+					</div>
+					<p:commandButton id="findDiamondMosaic"
+						value="Товары из категории Алмазная мозаика"
+						action="categoryDiamondMosaic" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/DiamondMosaic.jpg" />
+					</div>
+					<p:commandButton id="findEmbroideryRibbons"
+						value="Товары из категории Вышивка лентами"
+						action="categoryEmbroideryRibbons" />
+					<div>
+						<img
+							src="${request.contextPath}/resources/css/images/categories/EmbroideryRibbons.jpg" />
+					</div>
 				</h:panelGrid>
 			</h:form>
 		</p:panel>
